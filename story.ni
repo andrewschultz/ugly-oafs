@@ -20,10 +20,8 @@ include Object-Based Hinting by Andrew Schultz. [requires Basic Debugging by And
 
 include Trivial Niceties by Andrew Schultz.
 
-[These aren't earth-shaking, but they're at:
-https://www.dropbox.com/s/hc64gcof28um1wq/Basic%20Debugging.i7x
-https://www.dropbox.com/s/tbxoyl2g59k2ppn/Object-Based%20Hinting.i7x
-https://www.dropbox.com/s/i4nfnncf3i4mrmo/Trivial%20Niceties.i7x
+[These aren't earth-shaking, but they're at, or should be at,
+http://github.com/andrewschultz/misc
 ]
 
 section extensions you can find at inform7.com
@@ -36,6 +34,7 @@ include Property Checking by Emily Short. [modified trivially to track the # of 
 
 [include Object Response Tests by Juhana Leinonen. [This is also a serious bug fighting weapon to make your testers sweat less.]
 ]
+
 book rules
 
 the block listening rule is not listed in any rulebook.
@@ -54,7 +53,7 @@ when play begins (this is the only debug if you want rule):
 section initialize
 
 when play begins (this is the basic adjustments rule):
-	move marker backdrop to all not bzzt rooms;
+	move marker backdrop to all rooms not in meta-rooms;
 	set pronouns from onyx;
 	repeat through table of flippies:
 		now howsolve entry is 0;
@@ -83,6 +82,8 @@ a thing can be played. a thing is usually not played.
 a tangential is a kind of thing. a tangential is usually not cyclable. a tangential has a room called up-room. a tangential has a room called down-room.
 
 an animal can be zooish. an animal is usually not zooish.
+
+book bugs
 
 book tangential
 
@@ -244,7 +245,7 @@ xyzzy-above is a truth state that varies.
 xyzzy-below is a truth state that varies.
 
 carry out xyzzying:
-	if location of player is downy:
+	if mrlp is below-terra:
 		now xyzzy-below is true;
 		say "A hollow voice booms 'Fool! Bazza cannot be summoned ANYWHERE belowground!'" instead;
 	now xyzzy-above is true;
@@ -252,7 +253,7 @@ carry out xyzzying:
 	if mys > 13:
 		now mys is 26 - mys;
 	if mys is 2:
-		say "[if number of not visited uppy rooms > 0]A magic word is on the tip of your tongue. Maybe if you walk around everywhere, then come back, it'll make sense[else]'Xyzzy!' you exclaim. Then, for no reason at all, 'Zabba!' Well, that sounded better, but no dice[end if]." instead;
+		say "[if number of not visited rooms in above-terra > 0]A magic word is on the tip of your tongue. Maybe if you walk around everywhere, then come back, it'll make sense[else]'Xyzzy!' you exclaim. Then, for no reason at all, 'Zabba!' Well, that sounded better, but no dice[end if]." instead;
 	else if mys is 1 or mys is 8 or mys is 9:
 		say "You hear some notes, along with a weird silence that makes you cringe." instead;
 	say "[if mys > 2 and mys < 8]You hear a five-note melody[else]Some ultrasonic assault on your ears makes you cringe. Maybe somewhere else will be nicer[end if].";
@@ -407,12 +408,23 @@ understand the command "about" as something new.
 
 understand "about" as abouting.
 
+to say email:
+	say "blurglecruncheon@gmail.com";
+
+to say my-repo:
+	say "https://github.com/andrewschultz/ugly-oafs";
+
 carry out abouting:
-	say "It's not important to do EVERYTHING to make the oafs happy. In fact, you only really need about seven points to free them. But they'll be even happier if you do more.[paragraph break]Also, this work is dedicated to my just plain cool buds, Andy Boyd and Davy Fink. They are almost as cool as me, sort of my reflections in a way, and in no way imaginary, so stop saying that![paragraph break]But those foolz bailed on me when I aksed them to test the game. See the hard-working, patient and thoughtful people who didn't, with CREDITS.[paragraph break]Source code is included, for people who are technical like that. Transcripts are appreciated--send them to ugly.oafs@gmail.com.";
+	say "It's not important to do EVERYTHING to make the oafs happy. In fact, you only really need about seven points to free them. But they'll be even happier if you do more.[paragraph break]Also, this work is dedicated to my just plain cool buds, Andy Boyd and Davy Fink. They are almost as cool as me, sort of my reflections in a way, and in no way imaginary, so stop saying that![paragraph break]But those foolz bailed on me when I aksed them to test the game. See the hard-working, patient and thoughtful people who didn't, with CREDITS.[paragraph break]Source code is included, for people who are technical like that. Transcripts are appreciated--send them to [email]. If you find bugs, you can mail me or report them at [my-repo].";
 	now abouted is true;
 	the rule succeeds;
 
 abouted is a truth state that varies.
+
+section bugs
+
+to say bug-report:
+	say "BUG--mail me at [email] or report it at [my-repo] with a transcript or bug reproduction if possible."
 
 chapter creditsing
 
@@ -605,7 +617,7 @@ to say dirs of (thisr - a room):
 		continue the action;
 	let Q be the shiftability of thisr;
 	let EW be (remainder after dividing (Q - 1) by 5) - 2;
-	if thisr is downy:
+	if thisr is in below-terra:
 		now EW is 0 - EW;
 	let NS be ((Q - 1) / 5) - 2;
 	repeat through table of dirmaps:
@@ -644,7 +656,7 @@ vert	horiz	printy
 
 
 to say suff of (thisr - a room):
-	say "[if thisr is uppy][onho][else][opu][end if]";
+	say "[if thisr is in above-terra][onho][else][opu][end if]";
 
 thinkupping is an action out of world.
 
@@ -664,7 +676,7 @@ carry out thinkdowning:
 		say "You haven't read any messaged markers here below. They might help.";
 	else:
 		repeat through table of markables:
-			if rm1 entry is downy:
+			if rm1 entry is in below-terra:
 				if rm1 entry is d13 and x-1 entry is true:
 					say "[2da]By the pulse: [msg entry][line break]";
 				else if x-1 entry is true: [x-2 entry is always the bullpen, so we ignore it]
@@ -672,7 +684,7 @@ carry out thinkdowning:
 	if down-score > 0:
 		say "Heres stuff you've changed so far:[line break]";
 		repeat through table of flippies:
-			if cr1 entry is downy:
+			if cr1 entry is in below-terra:
 				if howsolve entry is 1:
 					say "[cr1 entry]: [b4txt entry] -> [aftxt entry][line break]";
 				if howsolve entry is 2:
@@ -687,7 +699,7 @@ carry out thinkupping:
 	else:
 		say "Here are the markers you've read:[line break][equal-banner of 30][line break]";
 		repeat through table of markables:
-			if rm1 entry is uppy:
+			if rm1 entry is in above-terra:
 				if rm1 entry is u13 and x-1 entry is true:
 					say "[2da]By the [if onyx is in u13]onyx[else]hole[end if] (13): [msg entry]";
 				else if x-1 entry is true and x-2 entry is true:
@@ -700,7 +712,7 @@ carry out thinkupping:
 	if score > 0:
 		say "Here's stuff you've changed so far:[line break]";
 		repeat through table of flippies:
-			if cr1 entry is uppy:
+			if cr1 entry is in above-terra:
 				if howsolve entry is 1:
 					say "[cr1 entry]: [b4txt entry] -> [aftxt entry][line break]";
 				else if howsolve entry is 2:
@@ -718,9 +730,9 @@ carry out txing:
 	if d13 is unvisited:
 		say "[err-rej]" instead;
 	now tx-nudge is true;
-	if location of player is uppy:
+	if mrlp is above-terra:
 		try thinkdowning instead;
-	else if location of player is downy:
+	else if mrlp is below-terra:
 		try thinkupping instead;
 	else:
 		if player has fry gun:
@@ -736,9 +748,9 @@ instead of thinking: [ugh, I hate the semi-duplicated code here but see no way t
 	if onyx is in lalaland and tx-nudge is false:
 		now tx-nudge is true;
 		ital-say "You will now focus on aboveground or belowground depending on where you are. But THINKX/TX will let you think about the area you are not in.";
-	if location of player is uppy:
+	if mrlp is above-terra:
 		try thinkupping instead;
-	else if location of player is downy:
+	else if mrlp is below-terra:
 		try thinkdowning instead;
 	else:
 		if player has fry gun:
@@ -772,7 +784,7 @@ carry out finding:
 		now fromf entry is unticked;
 	repeat through table of flippies:
 		if fromf entry is not off-stage and fromf entry is not in lalaland and player does not have fromf entry and fromf entry is unticked:
-			if location of fromf entry is visited and location of fromf entry is uppy:
+			if location of fromf entry is visited and location of fromf entry is in above-terra:
 				now fromf entry is ticked;
 				now found-yet is true;
 				if location of player is location of fromf entry:
@@ -780,14 +792,14 @@ carry out finding:
 				else:
 					say "The [fromf entry] ([printed name of location of fromf entry]): [bigway of location of player and location of fromf entry]";
 				if d13 is visited:
-					if location of fromf entry is uppy:
+					if location of fromf entry is in above-terra:
 						say " (above)";
 					else:
 						say " (below)";
 				say ".";
 	repeat through table of flippies:
 		if fromf entry is not off-stage and fromf entry is not in lalaland and player does not have fromf entry and fromf entry is unticked:
-			if location of fromf entry is visited and location of fromf entry is downy:
+			if location of fromf entry is visited and location of fromf entry is in below-terra:
 				now fromf entry is ticked;
 				now found-yet is true;
 				if location of player is location of fromf entry:
@@ -795,7 +807,7 @@ carry out finding:
 				else:
 					say "The [fromf entry] ([printed name of location of fromf entry]): [bigway of location of player and location of fromf entry]";
 				if d13 is visited:
-					if location of fromf entry is uppy:
+					if location of fromf entry is in above-terra:
 						say " (above)";
 					else:
 						say " (below)";
@@ -1206,19 +1218,19 @@ to say bigway of (r1 - a room) and (r2 - a room):
 	if r1 is d13 and r2 is u13:
 		say "up the hole";
 		continue the action;
-	if r1 is uppy and r2 is downy:
+	if r1 is in above-terra and r2 is in below-terra:
 		say "[if r1 is not u13][wayto of r1 and u13], [end if]down the hole[if r2 is not d13], then [wayto of d13 and r2][end if]";
 		continue the action;
-	if r1 is downy and r2 is uppy:
+	if r1 is in below-terra and r2 is in above-terra:
 		say "[if r1 is not d13][wayto of r1 and d13], [end if]up the hole[if r2 is not u13], then [wayto of u13 and r2][end if]";
 		continue the action;
 	say "[wayto of r1 and r2]";
 
 to say wayto of (r1 - a room) and (r2 - a room):
-	if r2 is uppy and r1 is downy:
+	if r2 is in above-terra and r1 is in below-terra:
 		say "(BUG)";
 		continue the action;
-	if r1 is uppy and r2 is downy:
+	if r1 is in above-terra and r2 is in below-terra:
 		say "(BUG)";
 		continue the action;
 	let b2 be shiftability of r2;
@@ -1227,7 +1239,7 @@ to say wayto of (r1 - a room) and (r2 - a room):
 	let b2a be the remainder after dividing (b2 - 1) by 5;
 	let b1a be the remainder after dividing (b1 - 1) by 5;
 	let easties be b1a - b2a;
-	if r2 is uppy:
+	if r2 is in above-terra:
 		now easties is b2a - b1a;
 	let nabs be northies;
 	if nabs < 0:
@@ -1309,7 +1321,7 @@ check taking the sled:
 
 a thing can be pristine. a thing is usually pristine.
 
-the marker is a backdrop. description of marker is "[one of]Marker, signpost, whichever. [or][stopping]It has the number [if location is uppy][shiftability of location of player] written on it[else][26 + shiftability of location of player] written over a poorly-erased [shiftability of location of player][end if][markable]"
+the marker is a backdrop. description of marker is "[one of]Marker, signpost, whichever. [or][stopping]It has the number [if location is in above-terra][shiftability of location of player] written on it[else][26 + shiftability of location of player] written over a poorly-erased [shiftability of location of player][end if][markable]"
 
 after examining marker when player is in d20:
 	say "There's even more if you look closer. Do so?";
@@ -1324,9 +1336,9 @@ d20-read is a number that varies.
 understand "signpost/sign/post" and "sign post" and "markers" as marker.
 
 check examining marker (this is the check where marker examined rule) :
-	if location of player is uppy:
+	if mrlp is above-terra:
 		now marker-x-up is true;
-	if location of player is downy:
+	if mrlp is below-terra:
 		now marker-x-down is true;
 
 instead of putting on the sled:
@@ -1341,7 +1353,7 @@ to say markable:
 		choose row with rm1 of location of player in table of markables;
 		now x-1 entry is true;
 		say ", and also written is [msg entry]";
-		if location of player is uppy:
+		if mrlp is above-terra:
 			now marker-msg-up is true;
 		else:
 			now marker-msg-down is true;
@@ -1349,7 +1361,7 @@ to say markable:
 		choose row with rm2 of location of player in table of markables;
 		now x-2 entry is true;
 		say ", and also written is [msg entry]";
-		if location of player is uppy:
+		if mrlp is above-terra:
 			now marker-msg-up is true;
 		else:
 			now marker-msg-down is true;
@@ -1549,8 +1561,6 @@ instead of doing something with the air:
 
 book mapping front
 
-[dont need to declare rooms uppy: they are all uppy by default]
-
 a room can be multmark. a room is usually not multmark.
 
 to say onho:
@@ -1559,7 +1569,7 @@ to say onho:
 to say opu:
 	say " of the pulse";
 
-a room can be uppy, downy or bzzt. a room is usually uppy.
+above-terra is a region. below-terra is a region. meta-rooms is a region.
 
 a room can be dumped. a room is usually not dumped.
 
@@ -1648,7 +1658,7 @@ u16 is a room. u17 is east of u16. u18 is east of u17. u19 is east of u18. u20 i
 
 river-cheat is a truth state that varies.
 
-the river is a backdrop. the river is in u09 and u17. "It's [if river-cheat is true]once again still[else if number of unvisited uppy rooms is 0]flowing along[else]very still[end if], and it goes underground, which is why you can't see it many other places[if river-cheat is false]. Anything you dropped in there might get carried who knows where[end if]. Eddies swirl clockwise."
+the river is a backdrop. the river is in u09 and u17. "It's [if river-cheat is true]once again still[else if number of unvisited rooms in above-terra is 0]flowing along[else]very still[end if], and it goes underground, which is why you can't see it many other places[if river-cheat is false]. Anything you dropped in there might get carried who knows where[end if]. Eddies swirl clockwise."
 
 understand "swim" as a mistake ("The [if ford is visible]ford[else]river[end if] doesn't seem to lead anywhere.") when river is visible or ford is visible.
 
@@ -1679,6 +1689,12 @@ u23 is privately-named. printed name of u23 is "Way south[onho]".
 u24 is privately-named. printed name of u24 is "South-southeast[onho]".
 
 u25 is privately-named. printed name of u25 is "Way southeast[onho]".
+
+u01 is in above-terra. u02 is in above-terra. u03 is in above-terra. u04 is in above-terra. u05 is in above-terra.
+u06 is in above-terra. u07 is in above-terra. u08 is in above-terra. u09 is in above-terra. u10 is in above-terra.
+u11 is in above-terra. u12 is in above-terra. u13 is in above-terra. u14 is in above-terra. u15 is in above-terra.
+u16 is in above-terra. u17 is in above-terra. u18 is in above-terra. u19 is in above-terra. u20 is in above-terra.
+u21 is in above-terra. u22 is in above-terra. u23 is in above-terra. u24 is in above-terra. u25 is in above-terra.
 
 a room has a number called shiftability.
 
@@ -1720,7 +1736,7 @@ when play begins (this is the show what leads where rule):
 	if print-dirs is true:
 		repeat with x running through useful directions:
 			let q be 0;
-			repeat with ur running through uppy rooms:
+			repeat with ur running through rooms in above-terra:
 				let z be shiftability of ur;
 				if the room x of ur is not nothing:
 					increment q;
@@ -1729,7 +1745,7 @@ when play begins (this is the show what leads where rule):
 					say "[x]: [z] no exit.";
 		repeat with x running through useful directions:
 			let q be 0;
-			repeat with ur running through downy rooms:
+			repeat with ur running through rooms in below-terra:
 				let z be shiftability of ur;
 				if the room x of ur is not nothing:
 					increment q;
@@ -1759,7 +1775,7 @@ used-hint is a truth state that varies.
 a thing can be rivered. a thing is usually not rivered.
 
 to decide whether river-can-hint:
-	if used-hint is true or number of uppy not visited rooms > 0:
+	if used-hint is true or number of not visited rooms in above-terra > 0:
 		decide no;
 	decide yes;
 
@@ -1790,12 +1806,12 @@ check inserting into river:
 			move noun to cr2 entry;
 		now used-hint is true;
 		now noun is rivered;
-		say "The river sends [the noun] floating underground before calming down. You [if location of noun is downy and onyx is in u13]hope you didn't just pitch something away[else]hear a THUNK [how-far of location of player and location of noun][end if]. Maybe [the noun] [if noun is plural-named]are[else]is[end if] in a better place, now." instead;
+		say "The river sends [the noun] floating underground before calming down. You [if location of noun is in below-terra and onyx is in u13]hope you didn't just pitch something away[else]hear a THUNK [how-far of location of player and location of noun][end if]. Maybe [the noun] [if noun is plural-named]are[else]is[end if] in a better place, now." instead;
 	else:
 		say "The river spits [the noun] back up into your hands. Guess you may not need to change [if noun is plural-named]those[else]that[end if]." instead;
 
 to say how-far of (r1 - a room) and (r2 - a room): [for the hinting, we look at the pythagorean values of the distance. N, NE, NN/NNE, 2NE/3E/3EN, FAR are grouped]
-	if r1 is uppy and r2 is downy:
+	if r1 is in above-terra and r2 is in below-terra:
 		say "echoing from below the hole";
 		continue the action;
 	let s1 be shiftability of r1 - 1;
@@ -2049,13 +2065,13 @@ every turn:
 			now SHI is SHI + 12;
 			if SHI > 25:
 				now SHI is SHI - 25;
-			if location of player is uppy:
+			if mrlp is above-terra:
 				repeat with daroom running through rooms:
-					if shiftability of daroom is SHI and daroom is uppy:
+					if shiftability of daroom is SHI and daroom is in above-terra:
 						move diver to daroom;
-			if location of player is downy:
+			if mrlp is below-terra:
 				repeat with daroom running through rooms:
-					if shiftability of daroom is SHI and daroom is downy:
+					if shiftability of daroom is SHI and daroom is in below-terra:
 						move diver to daroom;
 		if oaf is in location of player:
 			say "The oaf, scared, runs away!";
@@ -2215,17 +2231,17 @@ carry out going when up-score is 0:
 
 shiftability of d05 is 1.
 
-d05 is downy. d04 is downy. d03 is downy. d02 is downy. d01 is downy.
-d10 is downy. d09 is downy. d08 is downy. d07 is downy. d06 is downy.
-d15 is downy. d14 is downy. d13 is downy. d12 is downy. d11 is downy.
-d20 is downy. d19 is downy. d18 is downy. d17 is downy. d16 is downy.
-d25 is downy. d24 is downy. d23 is downy. d22 is downy. d21 is downy.
+d05 is in below-terra. d04 is in below-terra. d03 is in below-terra. d02 is in below-terra. d01 is in below-terra.
+d10 is in below-terra. d09 is in below-terra. d08 is in below-terra. d07 is in below-terra. d06 is in below-terra.
+d15 is in below-terra. d14 is in below-terra. d13 is in below-terra. d12 is in below-terra. d11 is in below-terra.
+d20 is in below-terra. d19 is in below-terra. d18 is in below-terra. d17 is in below-terra. d16 is in below-terra.
+d25 is in below-terra. d24 is in below-terra. d23 is in below-terra. d22 is in below-terra. d21 is in below-terra.
 
 going east in d01 is mapwarping. going west in d25 is mapwarping.
 
 chapter mine
 
-the Mine is a bzzt room. "You are in a deserted mine. There's a safe with a knob here[if player has fry gun], but you already broke in[end if]. You can only go out."
+the Mine is a room in meta-rooms. "You are in a deserted mine. There's a safe with a knob here[if player has fry gun], but you already broke in[end if]. You can only go out."
 
 the safe is scenery in the mine. "[if knob is part of the safe]There's a knob in the center. It doesn't even have a door[else]The wall with the knob has vanished[end if]. You notice numerals on the safe."
 
@@ -2520,21 +2536,21 @@ to decide whether not-note-cheat:
 	decide no;
 
 after printing the locale description when alluppy is false (this is the clue above rule):
-	if location of player is uppy:
-		if number of unvisited uppy rooms is 1 and location of player is unvisited:
+	if mrlp is above-terra:
+		if number of unvisited rooms in above-terra is 1 and location of player is unvisited:
 			say "You hear a rumbling from the center where you started: NOWHERE, ABJURER![paragraph break]";
 			now alluppy is true;
 		else:
-			d "[number of unvisited uppy rooms] left.";
-			if number of unvisited uppy rooms < 5:
-				d "[list of unvisited uppy rooms] left.";
+			d "[number of unvisited rooms in above-terra] left.";
+			if number of unvisited rooms in above-terra < 5:
+				d "[list of unvisited rooms in above-terra] left.";
 	continue the action;
 
 alldowny is a truth state that varies.
 
-after printing the locale description when alldowny is false and location of player is downy (this is the clue below rule):
-	if location of player is downy:
-		if number of unvisited downy rooms is 1 and location of player is unvisited:
+after printing the locale description when alldowny is false and location of player is in below-terra (this is the clue below rule):
+	if mrlp is below-terra:
+		if number of unvisited rooms in below-terra is 1 and location of player is unvisited:
 			if down-score < 2:
 				say "You're not sure you've mastered everything here, but it does seem backwards, a bit opposite of above. It can't be too much weirder, though. A voice cries 'Else...hath...' and it seems to be coming from the center.[paragraph break]There was a lot there, as well as by the prune trove. Maybe you can look there for clues what to do[if xyzzy-above is true and xyzzy-below is false], or maybe even try XYZZY down here, too. You never know. It might even be TOO hinty[end if].";
 	continue the action;
@@ -2552,13 +2568,13 @@ check listening:
 		say "You hear a 'Bzz' from the bee." instead;
 	if location of player is d10:
 		say "You hear music, from dirge to farce and back again." instead;
-	if location of player is mine or location of player is downy:
+	if location of player is mine or location of player is in below-terra:
 		say "The wrath pulse is filled with ire. 'Duh!' As if responding to a question[if player is not in d13]. You can hear it all the way here[end if]." instead;
-	if location of player is uppy:
-		if number of unvisited uppy rooms is 0:
+	if mrlp is above-terra:
+		if number of unvisited rooms in above-terra is 0:
 			say "'Nowhere, abjurer' still resonates from [if player is in u13]nearby[else]the center, by the onyx[end if]." instead;
-	if location of player is downy:
-		if number of unvisited downy rooms is 0:
+	if mrlp is below-terra:
+		if number of unvisited rooms in below-terra is 0:
 			say "'Nowhere, abjurer' still resonates from [if player is in d13]nearby[else]by the onyx[end if]." instead;
 	if player is in u05 or player is in u21:
 		if psst is visible:
@@ -2574,7 +2590,7 @@ u04	"'Open! Stir! Open! Stir!'"
 u06	"[guuo]"
 u20	"[guuo]"
 u07	"Jolly cheer."
-u13	"[if number of unvisited uppy rooms is 0]'Oho, bub!'[else]'Onyx! Balk!'[end if] the wind seems to say, for now."
+u13	"[if number of unvisited rooms in above-terra is 0]'Oho, bub!'[else]'Onyx! Balk!'[end if] the wind seems to say, for now."
 u19	"Jolly cheer."
 d11	"'Grit? Crap.'"
 d17	"For now, just '[one of]Ooh-aah[or]Huh-huh[or]All odd[in random order].'"
@@ -2922,7 +2938,7 @@ check entering the hotel:
 		say "There's time for happy reunions later." instead;
 	say "You'd disappoint the clerk." instead;
 
-the sky is a backdrop. "You look up at the sky, wondering if you can make anything fall out of it."
+the sky is a backdrop in above-terra. "You look up at the sky, wondering if you can make anything fall out of it."
 
 The gym is scenery. "[if gym-enter is true]You've no desire to go back[else]You've been neglecting the physical side through all this mental wordplay. Surely it wouldn't take too long to buff up[end if]."
 
@@ -2939,9 +2955,9 @@ book dumb verbs and places
 
 chapter dumb places
 
-lalaland is a bzzt room. [lalaland is my room to put people who are done with.]
+lalaland is a room in meta-rooms. [lalaland is my room to put people who are done with.]
 
-the bullpen is a bzzt room. [the bullpen is a place to put concepts that you need to hint, but you don't ever want to be in play. Or for things that need to be off-stage but you aren't done with. I suppose I could define a person or thing as done-with or done-for-now, but the locations seem more visually relevant.]
+the bullpen is a room in meta-rooms. [the bullpen is a place to put concepts that you need to hint, but you don't ever want to be in play. Or for things that need to be off-stage but you aren't done with. I suppose I could define a person or thing as done-with or done-for-now, but the locations seem more visually relevant.]
 
 the sea guy is a person in the bullpen.
 
@@ -3076,7 +3092,7 @@ to read-oafy:
 	if you-cheated > 0:
 		now did-you-cheat is true;
 		say "A high-pitched voice whines 'Cheaterer! You hackeded the accomplishment table entrieses[if you-cheated > 1] multiple timeses[end if]!'";
-		say "[wfak]";
+		wfak;
 	else:
 		if special-treat-1 is true and special-treat-2 is true:
 			say "The oafs dance around you. 'We is happy to have you back! You has made Green Terra even betterer! You cared enough to have returnded!' You show a way to deal with any dangerous frag-gulf that might reappear where the wrath pulse was--the answer came in your sleep. They offer you a toast of waxy milk, fresh from near the prune trove. It's surprisingly awesome and delicious.";
@@ -3099,7 +3115,7 @@ when play begins (this is the randomize weird drops rule):
 			increment max-down-score;]
 	read-oafy;
 	now right hand status line is "[score] + [frivolous-points]";
-	now left hand status line is "[location of player] ([if location of player is uppy]above [else]under[end if]ground)";
+	now left hand status line is "[location of player] ([if mrlp is above-terra]above [else]under[end if]ground)";
 	first-status;
 	say "Well, that was stupid. You'd never been to a D&D session, despite being accused of that in middle school. You got on the wrong side of the Dungeon Master, early. 'I have built a fantasy world!' he yelled, 'It's all so real!' He went on to babbling about dwarf/elf sociology and goblin taxonomies and worse. If you were too lazy to research things, and there's a whole INTERNET for that, you don't deserve to participate. As you exit, he takes a cheap shot about not dealing with ugly oafs. How does he live with himself, you wonder?[paragraph break][wfak-d]You're interrupted by high-pitched voices: 'We is ugly oafs too! From Green Terra!' You don't need any stupid jokes now, and when you whirl around and see them, they're certainly not pretty. Some are striped, some plaid, others polka-dotted. 'Ugly, ugly! Oafs, oafs!' they chant. 'It sees us! It hears us! It is shifty! We needs its help! With simple wordses! Come to the pent crag!'[paragraph break]No, nobody slipped anything in that can of root beer. They couldn't have. You opened it yourself. Nevertheless, you have nothing better to do. The library is closed. 'You must follows us!' And you do, through a cornfield that shouldn't be in this suburb, to wherever Green Terra might be.[paragraph break][wfak-d]'He...and IT...will deport us to Yorpwald and Elvira! And turn us into a sofa!'[wfak-d]As you jump, you ask who HE is. But the oafs chatter about running beyond the golem murks, and about a friend who is in disguise who will help you. Some go northwest-ish, others southeast-ish.";
 	say "[wfak-d]";
@@ -3123,19 +3139,18 @@ when play begins (this is the randomize weird drops rule):
 				while fromf entry is unshuffled and count < 20:
 					increment count;
 					if aboves entry is true:
-						now thisrm is a random uppy not dumped room;
+						now thisrm is a random not dumped room in above-terra;
 					else:
-						now thisrm is a random downy not dumped room;
+						now thisrm is a random not dumped room in below-terra;
 				if count is 20:
 					d "Not able to separate items.";
 				now fromf entry is in thisrm;
 				now thisrm is dumped;
-				d "[fromf entry] to [thisrm]. [number of uppy not dumped rooms] up left, [number of downy not dumped rooms] down left.";
+				d "[fromf entry] to [thisrm]. [number of not dumped rooms in above-terra] up left, [number of not dumped rooms in below-terra] down left.";
 				if there is no got-yet entry:
 					now got-yet entry is false;
 		else:
 			d "[fromf entry] is in [location of fromf entry].";
-	move sky backdrop to all uppy rooms;
 
 the file of oafdone is called "uoa"
 
@@ -3410,7 +3425,7 @@ down-score is a number that varies. max-down-score is a number that varies.
 
 to inc-score:
 	increment the score;
-	if location of player is uppy:
+	if mrlp is above-terra:
 		increment up-score;
 		if up-score is 2:
 			say "Man! This is tough. You could use something to give a tip. Maybe if you asked the right way, you could [bold type]get[roman type] a tip.";
@@ -3463,7 +3478,7 @@ rule for printing a parser error when the latest parser error is the not a verb 
 					else if fromf entry is not a backdrop:
 						move fromf entry to lalaland;
 					if fromf entry is bee: [this is to reduce max scores based on where bee changed]
-						if location of player is uppy:
+						if mrlp is above-terra:
 							decrement max-down-score;
 						else:
 							decrement max-up-score;
@@ -4028,14 +4043,14 @@ right guy	--	"He has a name. You can figure it out in-game."
 ]
 
 to say bottom-hint:
-	if number of downy unvisited rooms > 16:
+	if number of unvisited rooms in below-terra > 16:
 		say "You may want to avoid the corners, but you can poke around all the other rooms to notice what is there. The markers and what they say are, again, helpful. There is enough evidence to figure what to do at the center.";
 		continue the action;
 	say "[one of]You may suspect the mechanic is similar to the top. [plus][or]The undug elves and sea guy are a bit beyond, and this may provide a clue. [plus][or]So may some of the location names elsewhere. [plus][or]S=letter 19, G=letter 7. E=letter 5, U=letter 21. A=letter 1, Y=letter 25. [plus][or]You flip words based on if they, and another word, sum to the same alphabetical letter. In other words, you pivot around a certain letter. [minus][cycling]";
 
 to say first-hint:
-	if location of player is uppy:
-		if number of uppy unvisited rooms > 0:
+	if mrlp is above-terra:
+		if number of unvisited rooms in above-terra > 0:
 			say "You will get a small hint if you visit all the rooms. Or you can HINT (OBJECT) for a specific clue.";
 			continue the action;
 		if up-score is 0:
@@ -4161,7 +4176,7 @@ the rev box is a thing. "A tiny box labeled REV BOX is here. It appears written 
 
 check examining rev box:
 	let z be 0;
-	if location of player is downy:
+	if mrlp is below-terra:
 		now z is shiftability of location of player;
 	else:
 		say "The lettering on the rev. box appears faded right now." instead;
@@ -4382,32 +4397,32 @@ to dir-compare (myr - a room) and (qq - a direction):
 	if qq is south:
 		now magic-number is -5;
 	if qq is west:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is 1;
 		else:
 			now magic-number is -1;
 	if qq is east:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is -1;
 		else:
 			now magic-number is 1;
 	if qq is southwest:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is -4;
 		else:
 			now magic-number is -6;
 	if qq is southeast:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is -6;
 		else:
 			now magic-number is -4;
 	if qq is northeast:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is 4;
 		else:
 			now magic-number is 6;
 	if qq is northwest:
-		if myr is uppy:
+		if myr is in above-terra:
 			now magic-number is 6;
 		else:
 			now magic-number is 4;
@@ -4418,17 +4433,17 @@ to dir-compare (myr - a room) and (qq - a direction):
 		if magic-number is not -5:
 			say "Sorth of [myr], [a], is [b], should be [a + 5].";
 	if qq is west:
-		if myr is uppy:
+		if myr is in above-terra:
 			if magic-number is not 1:
 				say "West of [myr], [a], is [b], should be [a - 1].";
-		if myr is downy:
+		if myr is in below-terra:
 			if magic-number is not -1:
 				say "West of [myr], [a], is [b], should be [a + 1].";
 	if qq is east:
-		if myr is uppy:
+		if myr is in above-terra:
 			if magic-number is not -1:
 				say "West of [myr], [a], is [b], should be [a + 1].";
-		if myr is downy:
+		if myr is in below-terra:
 			if magic-number is not 1:
 				say "West of [myr], [a], is [b], should be [a - 1].";
 	
@@ -4436,16 +4451,16 @@ carry out xtesting:
 	repeat with myr running through rooms:
 		repeat with qq running through directions:
 			dir-compare myr and qq;
-	if location of player is uppy:
-		repeat with myr running through uppy rooms:
+	if mrlp is above-terra:
+		repeat with myr running through rooms in above-terra:
 			say "[myr][line break]";
 			say "[fixed letter spacing]";
 			say "[ftxt of myr and northwest] [ftxt of myr and north] [ftxt of myr and northeast][line break]";
 			say "[ftxt of myr and west] [if shiftability of myr < 10]0[end if][shiftability of myr] [ftxt of myr and east][line break]";
 			say "[ftxt of myr and southwest] [ftxt of myr and south] [ftxt of myr and southeast][line break]";
 			say "================[roman type][line break]"; 
-	if location of player is downy:
-		repeat with myr running through downy rooms:
+	if mrlp is below-terra:
+		repeat with myr running through rooms in below-terra:
 			say "[myr][line break]";
 			say "[fixed letter spacing]";
 			say "[ftxt of myr and northwest] [ftxt of myr and north] [ftxt of myr and northeast][line break]";
