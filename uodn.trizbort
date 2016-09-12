@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort version="1.5.8.6">
+	<info />
+	<map>
+		<room id="1" name="Reverse 5/31" subtitle="" x="-576" y="-416" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f00" roomFill="" secondFill="#FF0000" secondFillLocation="TopLeft" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="2" name="Reverse 4/30" subtitle="" x="-320" y="-416" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f01" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Bob|Keg::Cry (instadeath)</objects>
+		</room>
+		<room id="3" name="Reverse 3/29" subtitle="" x="-64" y="-416" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f02" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="4" name="Reverse 2/28" subtitle="" x="192" y="-416" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f03" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Anna</objects>
+		</room>
+		<room id="5" name="Reverse 10/36" subtitle="" x="-576" y="-224" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f10" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Boxy Hulk|BANE HIVE</objects>
+		</room>
+		<room id="6" name="Reverse 9/35" subtitle="" x="-320" y="-224" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f11" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="7" name="Reverse 1/27" subtitle="" x="448" y="-416" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f04" roomFill="" secondFill="#FF0000" secondFillLocation="TopRight" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Thug/Punk each in random corner</objects>
+		</room>
+		<room id="8" name="Reverse 8/34" subtitle="" x="-64" y="-224" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f12" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="9" name="Reverse 7/33" subtitle="" x="192" y="-224" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f13" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">drum::colt|bee::ebb|bzz::egg</objects>
+		</room>
+		<room id="10" name="Reverse 6/32" subtitle="" x="448" y="-224" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f14" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">one bar::den</objects>
+		</room>
+		<room id="11" name="Reverse 15/41" subtitle="" x="-576" y="-32" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f20" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">bzz::moo</objects>
+		</room>
+		<room id="12" name="Reverse 14/40" subtitle="" x="-320" y="-32" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f21" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="13" name="Reverse 13/39" subtitle="(Wrath Pulse)" x="-64" y="-32" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f22" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Pen:Why|Thug:Serf</objects>
+		</room>
+		<room id="14" name="Reverse 12/38" subtitle="" x="192" y="-32" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f23" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="15" name="Reverse 11/37" subtitle="" x="448" y="-32" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f24" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="16" name="Reverse 20/46" subtitle="" x="-576" y="160" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f30" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mesh::Goal (get Rev Box)</objects>
+		</room>
+		<room id="17" name="Reverse 19/45" subtitle="" x="-320" y="160" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f31" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">one bar::den</objects>
+		</room>
+		<room id="18" name="Reverse 18/44" subtitle="" x="-64" y="160" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f32" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Tix::Xit (bad end)|bikes::pigmy|gin::kid</objects>
+		</room>
+		<room id="19" name="Reverse 17/43" subtitle="" x="192" y="160" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f33" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">ape::pal</objects>
+		</room>
+		<room id="20" name="Reverse 16/42" subtitle="" x="448" y="160" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f34" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">hose::hawk</objects>
+		</room>
+		<room id="21" name="Reverse 25/51" subtitle="" x="-576" y="352" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f40" roomFill="" secondFill="#FF0000" secondFillLocation="BottomLeft" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="22" name="Reverse 24/50" subtitle="" x="-320" y="352" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f41" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">hose::pies|rift::ford</objects>
+		</room>
+		<room id="23" name="Reverse 23/49" subtitle="" x="-64" y="352" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f42" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Grid::Pens|GBCW::PUTZ|Shard::doves|Snare::diver</objects>
+		</room>
+		<room id="24" name="Reverse 22/48" subtitle="" x="192" y="352" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f43" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="25" name="Reverse 21/47" subtitle="" x="448" y="352" w="224" h="160" region="NoRegion" borderstyle="Solid" description="f44" roomFill="" secondFill="#FF0000" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">tape::exit</objects>
+		</room>
+		<line id="26">
+			<dock index="0" id="1" port="s" />
+			<dock index="1" id="5" port="n" />
+		</line>
+		<line id="27">
+			<dock index="0" id="5" port="s" />
+			<dock index="1" id="11" port="n" />
+		</line>
+		<line id="28">
+			<dock index="0" id="11" port="s" />
+			<dock index="1" id="16" port="n" />
+		</line>
+		<line id="29">
+			<dock index="0" id="16" port="s" />
+			<dock index="1" id="21" port="n" />
+		</line>
+		<line id="30">
+			<dock index="0" id="21" port="e" />
+			<dock index="1" id="22" port="w" />
+		</line>
+		<line id="31">
+			<dock index="0" id="22" port="n" />
+			<dock index="1" id="17" port="s" />
+		</line>
+		<line id="32">
+			<dock index="0" id="17" port="n" />
+			<dock index="1" id="12" port="s" />
+		</line>
+		<line id="33">
+			<dock index="0" id="12" port="n" />
+			<dock index="1" id="6" port="s" />
+		</line>
+		<line id="34">
+			<dock index="0" id="6" port="n" />
+			<dock index="1" id="2" port="s" />
+		</line>
+		<line id="35">
+			<dock index="0" id="2" port="e" />
+			<dock index="1" id="3" port="w" />
+		</line>
+		<line id="36">
+			<dock index="0" id="3" port="s" />
+			<dock index="1" id="8" port="n" />
+		</line>
+		<line id="37">
+			<dock index="0" id="8" port="s" />
+			<dock index="1" id="13" port="n" />
+		</line>
+		<line id="38">
+			<dock index="0" id="13" port="s" />
+			<dock index="1" id="18" port="n" />
+		</line>
+		<line id="39">
+			<dock index="0" id="18" port="s" />
+			<dock index="1" id="23" port="n" />
+		</line>
+		<line id="40">
+			<dock index="0" id="23" port="e" />
+			<dock index="1" id="24" port="w" />
+		</line>
+		<line id="41">
+			<dock index="0" id="24" port="n" />
+			<dock index="1" id="19" port="s" />
+		</line>
+		<line id="42">
+			<dock index="0" id="19" port="n" />
+			<dock index="1" id="14" port="s" />
+		</line>
+		<line id="43">
+			<dock index="0" id="14" port="n" />
+			<dock index="1" id="9" port="s" />
+		</line>
+		<line id="44">
+			<dock index="0" id="9" port="n" />
+			<dock index="1" id="4" port="s" />
+		</line>
+		<line id="45">
+			<dock index="0" id="4" port="e" />
+			<dock index="1" id="7" port="w" />
+		</line>
+		<line id="46">
+			<dock index="0" id="7" port="s" />
+			<dock index="1" id="10" port="n" />
+		</line>
+		<line id="47">
+			<dock index="0" id="10" port="s" />
+			<dock index="1" id="15" port="n" />
+		</line>
+		<line id="48">
+			<dock index="0" id="15" port="s" />
+			<dock index="1" id="20" port="n" />
+		</line>
+		<line id="49">
+			<dock index="0" id="20" port="s" />
+			<dock index="1" id="25" port="n" />
+		</line>
+		<line id="50">
+			<dock index="0" id="25" port="w" />
+			<dock index="1" id="24" port="e" />
+		</line>
+		<line id="51">
+			<dock index="0" id="23" port="w" />
+			<dock index="1" id="22" port="e" />
+		</line>
+		<line id="52">
+			<dock index="0" id="16" port="e" />
+			<dock index="1" id="17" port="w" />
+		</line>
+		<line id="53">
+			<dock index="0" id="17" port="e" />
+			<dock index="1" id="18" port="w" />
+		</line>
+		<line id="54">
+			<dock index="0" id="18" port="e" />
+			<dock index="1" id="19" port="w" />
+		</line>
+		<line id="55">
+			<dock index="0" id="19" port="e" />
+			<dock index="1" id="20" port="w" />
+		</line>
+		<line id="56">
+			<dock index="0" id="15" port="w" />
+			<dock index="1" id="14" port="e" />
+		</line>
+		<line id="57">
+			<dock index="0" id="14" port="w" />
+			<dock index="1" id="13" port="e" />
+		</line>
+		<line id="58">
+			<dock index="0" id="13" port="w" />
+			<dock index="1" id="12" port="e" />
+		</line>
+		<line id="59">
+			<dock index="0" id="12" port="w" />
+			<dock index="1" id="11" port="e" />
+		</line>
+		<line id="60">
+			<dock index="0" id="5" port="e" />
+			<dock index="1" id="6" port="w" />
+		</line>
+		<line id="61">
+			<dock index="0" id="6" port="e" />
+			<dock index="1" id="8" port="w" />
+		</line>
+		<line id="62">
+			<dock index="0" id="8" port="e" />
+			<dock index="1" id="9" port="w" />
+		</line>
+		<line id="63">
+			<dock index="0" id="9" port="e" />
+			<dock index="1" id="10" port="w" />
+		</line>
+		<line id="64">
+			<dock index="0" id="4" port="w" />
+			<dock index="1" id="3" port="e" />
+		</line>
+		<line id="65">
+			<dock index="0" id="2" port="w" />
+			<dock index="1" id="1" port="e" />
+		</line>
+		<line id="66">
+			<dock index="0" id="1" port="se" />
+			<dock index="1" id="6" port="nw" />
+		</line>
+		<line id="67">
+			<dock index="0" id="2" port="sw" />
+			<dock index="1" id="5" port="ne" />
+		</line>
+		<line id="68">
+			<dock index="0" id="5" port="se" />
+			<dock index="1" id="12" port="nw" />
+		</line>
+		<line id="69">
+			<dock index="0" id="12" port="se" />
+			<dock index="1" id="18" port="nw" />
+		</line>
+		<line id="70">
+			<dock index="0" id="18" port="se" />
+			<dock index="1" id="24" port="nw" />
+		</line>
+		<line id="71">
+			<dock index="0" id="24" port="ne" />
+			<dock index="1" id="20" port="sw" />
+		</line>
+		<line id="72">
+			<dock index="0" id="20" port="nw" />
+			<dock index="1" id="14" port="se" />
+		</line>
+		<line id="73">
+			<dock index="0" id="14" port="nw" />
+			<dock index="1" id="8" port="se" />
+		</line>
+		<line id="74">
+			<dock index="0" id="8" port="nw" />
+			<dock index="1" id="2" port="se" />
+		</line>
+		<line id="75">
+			<dock index="0" id="3" port="sw" />
+			<dock index="1" id="6" port="ne" />
+		</line>
+		<line id="76">
+			<dock index="0" id="6" port="se" />
+			<dock index="1" id="13" port="nw" />
+		</line>
+		<line id="77">
+			<dock index="0" id="13" port="se" />
+			<dock index="1" id="19" port="nw" />
+		</line>
+		<line id="78">
+			<dock index="0" id="19" port="se" />
+			<dock index="1" id="25" port="nw" />
+		</line>
+		<line id="79">
+			<dock index="0" id="13" port="ne" />
+			<dock index="1" id="9" port="sw" />
+		</line>
+		<line id="80">
+			<dock index="0" id="9" port="ne" />
+			<dock index="1" id="7" port="sw" />
+		</line>
+		<line id="81">
+			<dock index="0" id="13" port="sw" />
+			<dock index="1" id="17" port="ne" />
+		</line>
+		<line id="82">
+			<dock index="0" id="17" port="sw" />
+			<dock index="1" id="21" port="ne" />
+		</line>
+		<line id="83">
+			<dock index="0" id="16" port="se" />
+			<dock index="1" id="22" port="nw" />
+		</line>
+		<line id="84">
+			<dock index="0" id="22" port="ne" />
+			<dock index="1" id="18" port="sw" />
+		</line>
+		<line id="85">
+			<dock index="0" id="18" port="ne" />
+			<dock index="1" id="14" port="sw" />
+		</line>
+		<line id="86">
+			<dock index="0" id="14" port="ne" />
+			<dock index="1" id="10" port="sw" />
+		</line>
+		<line id="87">
+			<dock index="0" id="10" port="nw" />
+			<dock index="1" id="4" port="se" />
+		</line>
+		<line id="88">
+			<dock index="0" id="4" port="sw" />
+			<dock index="1" id="8" port="ne" />
+		</line>
+		<line id="89">
+			<dock index="0" id="8" port="sw" />
+			<dock index="1" id="12" port="ne" />
+		</line>
+		<line id="90">
+			<dock index="0" id="12" port="sw" />
+			<dock index="1" id="16" port="ne" />
+		</line>
+		<line id="91">
+			<dock index="0" id="11" port="se" />
+			<dock index="1" id="17" port="nw" />
+		</line>
+		<line id="92">
+			<dock index="0" id="17" port="se" />
+			<dock index="1" id="23" port="nw" />
+		</line>
+		<line id="93">
+			<dock index="0" id="23" port="ne" />
+			<dock index="1" id="19" port="sw" />
+		</line>
+		<line id="94">
+			<dock index="0" id="19" port="ne" />
+			<dock index="1" id="15" port="sw" />
+		</line>
+		<line id="95">
+			<dock index="0" id="15" port="nw" />
+			<dock index="1" id="9" port="se" />
+		</line>
+		<line id="96">
+			<dock index="0" id="9" port="nw" />
+			<dock index="1" id="3" port="se" />
+		</line>
+		<line id="97">
+			<dock index="0" id="6" port="sw" />
+			<dock index="1" id="11" port="ne" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<fill>White</fill>
+			<border>MidnightBlue</border>
+			<line>MidnightBlue</line>
+			<selectedLine>SteelBlue</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<largeText>MidnightBlue</largeText>
+			<smallText>MidnightBlue</smallText>
+			<lineText>MidnightBlue</lineText>
+			<grid>#F5F5F5</grid>
+		</colors>
+		<regions>
+			<NoRegion Name="NoRegion" TextColor="Blue">White</NoRegion>
+		</regions>
+		<fonts>
+			<room size="12">Arial</room>
+			<object size="9.75">Arial</object>
+			<line size="9">Arial</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>32</size>
+		</grid>
+		<lines>
+			<width>2</width>
+			<handDrawn>no</handDrawn>
+			<arrowSize>12</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>24</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>32</connectionStalkLength>
+			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
+		</rooms>
+		<ui>
+			<handleSize>12</handleSize>
+			<snapToElementSize>16</snapToElementSize>
+		</ui>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>
