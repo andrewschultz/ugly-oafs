@@ -109,7 +109,7 @@ some wet sap is singular-named and cyclable. "Some wet sap lies here. It's sort 
 
 check taking off sap:
 	say "It's stuck pretty well, but not enough to prevent you from carrying things." instead;
-	
+
 after taking sap:
 	say "You hear a mournful WHOOOO as you take it. You're temporarily blinded by a pulse of light, as well.";
 
@@ -325,7 +325,7 @@ to decide what number is pythag-dist of (r1 - a room) and (r2 - a room):
 	let tot be ((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2));
 	d "[x1] [y1] vs [x2] [y2] => [tot].";
 	decide on tot;
-	
+
 instead of kissing:
 	if noun is oaf or noun is diver:
 		say "You decide to just pat them on the head, too." instead;
@@ -346,7 +346,7 @@ instead of doing something with mn:
 
 instead of waking up: [?? QUEY is possible]
 	say "You try the usual break-out-of-a-dream stuff, but nothing works.";
-	
+
 the block waving hands rule is not listed in any rulebook.
 
 instead of waving hands:
@@ -440,20 +440,20 @@ carry out creditsing:
 
 chapter talktoing
 
-Understand the commands "ask" and "tell" and "say" and "answer" as something new. 
+Understand the commands "ask" and "tell" and "say" and "answer" as something new.
 
-Understand "ask [text]" or "tell [text]" or "answer [text]" or "say [text]" as a mistake ("[talk to instead]"). 
+Understand "ask [text]" or "tell [text]" or "answer [text]" or "say [text]" as a mistake ("[talk to instead]").
 
-Instead of asking someone to try doing something: 
-	say "[talk to instead][paragraph break]". 
+Instead of asking someone to try doing something:
+	say "[talk to instead][paragraph break]".
 
-Instead of answering someone that something: 
-	say "[talk to instead][paragraph break]". 
+Instead of answering someone that something:
+	say "[talk to instead][paragraph break]".
 
-To say talk to instead: 
-	say "(To communicate in [story title], TALK TO a character. If you have a magic word to say, say it as-is, no need for prefixes or suffixes.) " 
+To say talk to instead:
+	say "(To communicate in [story title], TALK TO a character. If you have a magic word to say, say it as-is, no need for prefixes or suffixes.) "
 
-Understand "talk to [someone]" as talking to. Understand "talk to [something]" as talking to. Talking to is an action applying to one thing. 
+Understand "talk to [someone]" as talking to. Understand "talk to [something]" as talking to. Talking to is an action applying to one thing.
 
 to say mb-frog:
 	choose row 1 in table of accomp;
@@ -521,7 +521,7 @@ every turn when diver-follow is true (this is the dive for treasure rule):
 		now diver is in location of player;
 		say "The diver trudges along behind, looking for--well, probably somewhere to dive.";
 		treasure-check;
-		
+
 to treasure-check:
 	d "ford: [if ford is visible]true[else]false[end if] rift: [if rift is visible]true[else]false[end if].";
 	if player is in u09 or player is in u17:
@@ -757,7 +757,7 @@ instead of thinking: [ugh, I hate the semi-duplicated code here but see no way t
 			say "You have the fry gun. The time for thinking is over.";
 		else:
 			say "Brute force can't be the answer, here. You may need some lateral thinking.";
-		
+
 chapter finding
 
 finding is an action out of world.
@@ -913,7 +913,7 @@ to allow-oaf-cont:
 	choose row xyz in table of final question options;
 	now final response rule entry is oaf-cont rule;
 	d "Allowing oaf continue.";
-	choose row with a final response rule of immediately undo rule in the Table of Final Question Options; 
+	choose row with a final response rule of immediately undo rule in the Table of Final Question Options;
 	delete the final question wording entry;
 	choose row with final response activity of nodoing in the table of final question options;
 	now only if victorious entry is false;
@@ -1052,7 +1052,7 @@ carry out xiting:
 			allow-oaf-cont;
 			do nothing instead;
 		say "You wave the tickets, but not much happens." instead;
-	try exiting instead;			
+	try exiting instead;
 	the rule succeeds;
 
 chapter wining
@@ -1617,7 +1617,7 @@ u10 is privately-named. printed name of u10 is "East-northeast[onho]". "[rough-b
 
 the cubed melon is scenery in u10. "The cubed melon is--well, you've never seen anything like it. It's a total head scratcher. It must be special to Green Terra. Perhaps there's significance to why it's right here, too."
 
-u06 is south of u01. u07 is south of u02. u08 is south of u03. u09 is south of u04. u10 is south of u05. 
+u06 is south of u01. u07 is south of u02. u08 is south of u03. u09 is south of u04. u10 is south of u05.
 
 u11 is a room. u12 is east of u11. u13 is east of u12. u14 is east of u13. u15 is east of u14.
 
@@ -1652,7 +1652,7 @@ u14 is privately-named. printed name of u14 is "Just east[onho]".
 
 u15 is privately-named. printed name of u15 is "Way east[onho]".
 
-u11 is south of u06. u12 is south of u07. u13 is south of u08. u14 is south of u09. u15 is south of u10. 
+u11 is south of u06. u12 is south of u07. u13 is south of u08. u14 is south of u09. u15 is south of u10.
 
 u16 is a room. u17 is east of u16. u18 is east of u17. u19 is east of u18. u20 is east of u19.
 
@@ -1674,11 +1674,11 @@ u19 is privately-named. printed name of u19 is "Just southeast[onho]". "[u07-33]
 
 u20 is privately-named. printed name of u20 is "[gomu], east-southeast[onho]". "[rough-blah][one of]. You don't see any oafs here, even though it's murky enough to be the golem murks. But you[or]. You[stopping] hear something."
 
-u16 is south of u11. u17 is south of u12. u18 is south of u13. u19 is south of u14. u20 is south of u15. 
+u16 is south of u11. u17 is south of u12. u18 is south of u13. u19 is south of u14. u20 is south of u15.
 
 u21 is a room. u22 is east of u21. u23 is east of u22. u24 is east of u23. u25 is east of u24.
 
-u21 is south of u16. u22 is south of u17. u23 is south of u18. u24 is south of u19. u25 is south of u20. 
+u21 is south of u16. u22 is south of u17. u23 is south of u18. u24 is south of u19. u25 is south of u20.
 
 u21 is a privately-named room. printed name of u21 is "Way southwest[onho]".
 
@@ -1833,7 +1833,7 @@ to say how-far of (r1 - a room) and (r2 - a room): [for the hinting, we look at 
 		say "kind of far away";
 	else:
 		say "very far away";
-	
+
 book mapping back
 
 d05 is a privately-named room. printed name of d05 is "Way northwest[opu]"
@@ -1911,7 +1911,7 @@ does the player mean doing something with the middle guy: it is very likely.
 
 after doing something with statue of three cool dudes:
 	set the pronoun them to cool dudes;
-	
+
 the bee is a followy fixed-off animal. "That bee you released from the bane hive is buzzing around dangerously.". description is "It looks pretty angry and violent. You'll need some way to slow it down."
 
 the boxy hulk is a person. "[one of]Man, reinforcements for the bee! Something must be hidden here. A boxy hulk--actually shaped like a box--sees you and booms 'MINE!' Fortunately, it's as mobile as a box[or]That boxy hulk is still here. It's actually shaped like a box. And mobile[stopping].". description is "The boxy hulk looks around for a fight but doesn't think you're worth not guarding--the prune trove, apparently."
@@ -1963,7 +1963,7 @@ definition: a person (called per) is chasey:
 
 to say tigfo:
 	now tiger is followy;
-	
+
 to say thufo:
 	now thug is followy;
 
@@ -2007,7 +2007,7 @@ to say fol-text of (JJJ - a person):
 			say "[foltext entry]";
 			continue the action;
 	say "follows"
-	
+
 table of followtext
 fol	foltext
 bee	"buzzes along behind--BZZ, BZZ"
@@ -2086,7 +2086,7 @@ to no-continue:
 	choose row with final response activity of nodoing in the table of final question options;
 	now only if victorious entry is true;
 	end the story;
-	
+
 to dispose (x - a person):
 	now x is in lalaland;
 	now x is beat;
@@ -2188,7 +2188,7 @@ the small ford is scenery. "It's less intimidating than the rift but still very 
 
 check entering ford:
 	say "You splash around for a bit. Whee." instead;
-	
+
 d23 is privately-named. printed name of d23 is "Way south[opu]". description of d23 is "[rough-blah][if snare is visible]. There's also a snare here. You wonder what got caught in it[end if]."
 
 the snare is scenery in d23. "It seems to be pulsing, as if it caught someone or something, but what?"
@@ -2644,7 +2644,7 @@ check tying chain to:
 			say "Already attached." instead;
 		now sled-chain is true;
 		now chain is part of the sled;
-		say "You attach the chain to the sled. It'll be a bit easier to lug around now." instead;			
+		say "You attach the chain to the sled. It'll be a bit easier to lug around now." instead;
 	say "You don't need to lug that around, or a simple chain won't go around it." instead;
 
 check tying:
@@ -2730,7 +2730,7 @@ chapter table
 
 to say hulk-to:
 	now boxy hulk is in d10;
-	
+
 to say have-pyrex:
 	now player has pyrex;
 
@@ -2815,7 +2815,7 @@ to say dodo-check:
 		now totem is in lalaland;
 	else:
 		say "You released one dodo, but the species will be extinct unless you can release another one! What to do? Where to go?";
-	
+
 to say all-for-hay:
 	if pig is in lalaland or bus is in lalaland:
 		say "Well, that's the last of the hay.[check-ach of 31]";
@@ -3101,7 +3101,7 @@ to read-oafy:
 			now did-accomp entry is false;
 			now dumhash entry is 0;
 			end the game in victory;
-		
+
 
 report restoring the game (this is the check for cheats when restoring rule):
 	read-oafy;
@@ -3639,7 +3639,7 @@ this is the oaf-cont rule:
 	now escape mode is true;
 	resume the story;
 	d "Restoring undo.";
-	choose row with a final response rule of immediately undo rule in the Table of Final Question Options; 
+	choose row with a final response rule of immediately undo rule in the Table of Final Question Options;
 	now the final question wording entry is "UNDO the last command";
 	say "You dismiss what you did as a thought experiment. Or you quickly change back your magic just in time.";
 
@@ -4155,7 +4155,7 @@ stye-hint is a number that varies. box-hint is a number that varies.
 
 check opening hint stye:
 	say "That might break the clues it's giving." instead;
-	
+
 check opening rev box:
 	say "That might break the clues it's giving." instead;
 
@@ -4446,7 +4446,7 @@ to dir-compare (myr - a room) and (qq - a direction):
 		if myr is in below-terra:
 			if magic-number is not 1:
 				say "West of [myr], [a], is [b], should be [a - 1].";
-	
+
 carry out xtesting:
 	repeat with myr running through rooms:
 		repeat with qq running through directions:
@@ -4458,7 +4458,7 @@ carry out xtesting:
 			say "[ftxt of myr and northwest] [ftxt of myr and north] [ftxt of myr and northeast][line break]";
 			say "[ftxt of myr and west] [if shiftability of myr < 10]0[end if][shiftability of myr] [ftxt of myr and east][line break]";
 			say "[ftxt of myr and southwest] [ftxt of myr and south] [ftxt of myr and southeast][line break]";
-			say "================[roman type][line break]"; 
+			say "================[roman type][line break]";
 	if mrlp is below-terra:
 		repeat with myr running through rooms in below-terra:
 			say "[myr][line break]";
@@ -4466,7 +4466,7 @@ carry out xtesting:
 			say "[ftxt of myr and northwest] [ftxt of myr and north] [ftxt of myr and northeast][line break]";
 			say "[ftxt of myr and west] [if shiftability of myr < 10]0[end if][shiftability of myr] [ftxt of myr and east][line break]";
 			say "[ftxt of myr and southwest] [ftxt of myr and south] [ftxt of myr and southeast][line break]";
-			say "================[roman type][line break]"; 
+			say "================[roman type][line break]";
 	the rule succeeds;
 
 chapter fcing
