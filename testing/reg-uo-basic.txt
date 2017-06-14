@@ -1,0 +1,57 @@
+###############################
+#ugly oafs basic testing file
+
+>walkto cot
+>get cot
+>oaf
+by one point
+
+>walkto ferns
+>walkto 4
+>banjo
+by one point
+
+>walkto dolls
+>wheel
+by one point
+
+>walkto drum
+>colt
+by one point
+
+>walkto shard
+>doves
+by one point
+
+>gt ingot
+>gt 6
+>chain
+>gt hats
+>gt 11
+>sled
+>push sled to tuffet
+>steeds
+>attach steeds to sled
+>se
+>se
+
+>d
+
+#################part 2
+
+#################first let's get rid of the bee
+>gt 10
+>attack hive
+>z
+>undo
+
+>gt -19
+>loo
+by one point
+>undo
+>undo
+>gt 7
+>gt -10
+>gt -21
+>gt 7
+>gt 15
